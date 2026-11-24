@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Campus – Low-code style checker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">appsmith<span>_</span> style (free simulation)</div>
+    <div class="actions">
+      <span class="pill">Deployed preview</span>
+      <span class="pill soft">No paid plan</span>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside class="widgets">
+      <h2>Widgets</h2>
+      <button type="button" disabled>Input</button>
+      <button type="button" disabled>Number</button>
+      <button type="button" disabled>Checkbox</button>
+      <button type="button" disabled>Button</button>
+      <button type="button" disabled>Text</button>
+      <p class="note">Visual builder mock. Logic uses the same booking rules as the code track, written as platform expressions below.</p>
+    </aside>
+
+    <main class="canvas">
+      <div class="banner">
+        Label: this is a low-code style simulation of an Appsmith/Budibase screen on a free static host.
+        Same acceptance criteria. Not a paid Appsmith cloud workspace.
+      </div>
+
+      <section class="screen">
+        <h1>Room 204 availability</h1>
+        <p>Current time: <strong id="now">09:00</strong></p>
+        <p>Existing bookings (table widget):</p>
+        <table>
+          <thead><tr><th>Start</th><th>End</th></tr></thead>
+          <tbody id="bookings"></tbody>
+        </table>
+
+        <label for="start">StartTime</label>
+        <input type="time" id="start">
+
+        <label for="duration">DurationMin</label>
+        <input type="number" id="duration" min="1" max="120" placeholder="60">
+
+        <label class="check"><input type="checkbox" id="blocked"> IsBlocked</label>
+
+        <button type="button" id="run">Check availability</button>
+
+        <p id="error" class="error"></p>
+        <p id="result" class="result"></p>
+        <p id="reason" class="reason"></p>
+      </section>
+    </main>
+
+    <aside class="props">
+      <h2>Property pane</h2>
+      <p class="label">Button1.onClick</p>
+      <pre id="formula">{{
+  checkAvailability({
+    start: StartTime.minutes,
+    duration: DurationMin.value,
+    now: 540,
+    blocked: IsBlocked.isChecked,
+    bookings: BookingsTable.data
+  })
+}}</pre>
+      <p class="label">Result.text</p>
+      <pre>{{ Decision.available ? "Available" : "Unavailable" }}</pre>
+      <p class="label">Reason.text</p>
+      <pre>{{ Decision.reason + ": " + Decision.message }}</pre>
+      <p class="note">Expressions only. No login, no database connector, no secrets.</p>
+    </aside>
+  </div>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>

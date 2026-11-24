@@ -1,0 +1,17 @@
+* { box-sizing: border-box; }
+body { margin: 0; font-family: system-ui, sans-serif; background: #eef1f5; color: #111; }
+.card { max-width: 420px; margin: 40px auto; padding: 24px; background: #fff; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,.08); }
+.tag { display: inline-block; margin: 0 0 8px; font-size: 0.8rem; color: #334155; }
+h1 { font-size: 1.4rem; margin: 0 0 12px; }
+.info { margin: 4px 0; }
+ul { margin: 4px 0 16px; }
+label { display: block; margin-top: 12px; font-weight: 600; }
+input[type="time"], input[type="number"] { width: 100%; padding: 8px; font-size: 1rem; margin-top: 4px; }
+.check { font-weight: 400; }
+button { width: 100%; margin-top: 16px; padding: 10px; font-size: 1rem; border: 0; border-radius: 6px; background: #1d4ed8; color: #fff; cursor: pointer; }
+.error { color: #b91c1c; min-height: 1.2em; }
+.result { font-size: 1.3rem; font-weight: 700; margin: 8px 0 0; }
+.result.ok { color: #15803d; }
+.result.no { color: #b91c1c; }
+.reason { margin: 4px 0 0; color: #475569; font-size: 0.95rem; }
+@media (max-width: 480px) { .card { margin: 0; border-radius: 0; min-height: 100vh; } }
