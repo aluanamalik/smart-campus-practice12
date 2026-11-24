@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Campus – Room Availability (code-based)</title>
+  <script type="module" crossorigin src="/smart-campus-practice12/assets/code-DL_41Y-C.js"></script>
+  <link rel="modulepreload" crossorigin href="/smart-campus-practice12/assets/fixtures-DhkyCb5-.js">
+  <link rel="stylesheet" crossorigin href="/smart-campus-practice12/assets/code-DtUaDxcK.css">
+</head>
+<body>
+  <main class="card">
+    <p class="tag">Code-based</p>
+    <h1>Room 204 availability</h1>
+    <p class="info">Current time: <strong id="now">09:00</strong></p>
+    <p class="info">Existing bookings:</p>
+    <ul id="bookings"></ul>
+
+    <form id="check-form" novalidate>
+      <label for="start">Start time</label>
+      <input type="time" id="start">
+
+      <label for="duration">Duration (minutes)</label>
+      <input type="number" id="duration" min="1" max="120" step="1" placeholder="e.g. 60">
+
+      <label class="check"><input type="checkbox" id="blocked"> Room is blocked</label>
+
+      <button type="submit">Check availability</button>
+    </form>
+
+    <p id="error" class="error" role="alert"></p>
+    <p id="result" class="result" aria-live="polite"></p>
+    <p id="reason" class="reason"></p>
+  </main>
+</body>
+</html>
