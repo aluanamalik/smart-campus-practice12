@@ -1,0 +1,5 @@
+repo=https://origin.cursor.com/araibayaly/smart-campus-practice12
+github=https://github.com/aluanamalik/smart-campus-practice12
+live=https://aluanamalik.github.io/smart-campus-practice12/
+code=https://aluanamalik.github.io/smart-campus-practice12/code/
+lowcode=https://aluanamalik.github.io/smart-campus-practice12/lowcode/

@@ -3,6 +3,7 @@ import { resolve } from 'node:path';
 
 export default defineConfig({
   root: '.',
+  base: '/smart-campus-practice12/',
   build: {
     rollupOptions: {
       input: {
